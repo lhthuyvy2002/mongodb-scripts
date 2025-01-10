@@ -1,0 +1,55 @@
+{
+  "InsertSingleProduct": {
+    "description": "Thêm một sản phẩm vào bộ sưu tập demoDB.products",
+    "command": {
+      "insertOne": {
+        "document": {
+          "productName": "Laptop X",
+          "category": "Electronics",
+          "price": 1500,
+          "stock": 20,
+          "isAvailable": true
+        }
+      }
+    }
+  },
+  "InsertMultipleProducts": {
+    "description": "Thêm nhiều sản phẩm vào bộ sưu tập demoDB.products",
+    "command": {
+      "insertMany": {
+        "documents": [
+          {
+            "productName": "Tablet Y",
+            "category": "Electronics",
+            "price": 800,
+            "stock": 50,
+            "isAvailable": true
+          },
+          {
+            "productName": "Smartphone Z",
+            "category": "Electronics",
+            "price": 100,
+            "stock": 50,
+            "isAvailable": false
+          }
+        ]
+      }
+    }
+  },
+  "FindSpecificProduct": {
+    "description": "Tìm kiếm sản phẩm thuộc category 'Electronics'",
+    "query": {
+      "find": {
+        "filter": { "category": "Electronics" }
+      }
+    }
+  },
+  "FilterProductsByPrice": {
+    "description": "Lọc sản phẩm có giá lớn hơn 1000",
+    "query": {
+      "find": {
+        "filter": { "price": { "$gt": 1000 } }
+      }
+    }
+  }
+}
